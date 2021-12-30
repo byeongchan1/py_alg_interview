@@ -4,6 +4,7 @@
 - 2부 파이썬
   - 6장 문자열 조작
     - 문제01 유효한 팰린드롬
+      - https://leetcode.com/problems/valid-palindrome/
     - 문제02 문자열 뒤집기
     - 문제03 로그 파일 재정렬
     - 문제04 가장 흔한 단어
