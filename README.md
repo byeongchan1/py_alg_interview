@@ -6,6 +6,7 @@
     - 문제01 유효한 팰린드롬
       - https://leetcode.com/problems/valid-palindrome/
     - 문제02 문자열 뒤집기
+      - https://leetcode.com/problems/reverse-string/
     - 문제03 로그 파일 재정렬
     - 문제04 가장 흔한 단어
     - 문제05 그룹 애너그램
