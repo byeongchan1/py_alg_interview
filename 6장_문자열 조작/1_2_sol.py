@@ -4,8 +4,8 @@
 
 # https://leetcode.com/problems/valid-palindrome/
 
-import collecitons
-
+import collections
+from typing import Deque
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
