@@ -3,32 +3,36 @@
 
 # Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
 
-class MyStack:
+class MyQueue:
 
     def __init__(self):
-        self.q = collections.deque()
+        self.input = []
+        self.output = []
 
     def push(self, x: int) -> None:
-        self.q.append(x)
-        
-        # 추가된 x 맨 왼쪽에 두도록 재정렬
-        for _ in range(len(self.q) - 1):
-            self.q.append(self.q.popleft())        
+        self.input.append(x)
 
     def pop(self) -> int:
-        return self.q.popleft()        
+        self.peek()
+        return self.output.pop()
+        
 
-    def top(self) -> int:
-        return self.q[0]
+    def peek(self) -> int:
+        if not self.output:
+            
+            while self.input:
+                self.output.append(self.input.pop())
+            
+        return self.output[-1]
 
     def empty(self) -> bool:
-        return len(self.q) == 0
+        return self.input == [] and self.output == []
         
 
 
-# Your MyStack object will be instantiated and called as such:
-# obj = MyStack()
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
 # obj.push(x)
 # param_2 = obj.pop()
-# param_3 = obj.top()
+# param_3 = obj.peek()
 # param_4 = obj.empty()
