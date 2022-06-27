@@ -5,21 +5,14 @@
 
 # You must write an algorithm with O(log n) runtime complexity.
 
+from bisect import bisect_left
 from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        def binary_search(left, right):
-            if left <= right:
-                mid = (left + right) // 2
+        index = bisect_left(nums, target)
 
-                if nums[mid] < target:
-                    return binary_search(mid + 1, right)
-                elif nums[mid] > target:
-                    return binary_search(left, mid - 1)
-                else:
-                    return mid
-            
+        if index < len(nums) and nums[index] == target:
+            return index
+        else:
             return -1
-        
-        return binary_search(0, len(nums) - 1)
