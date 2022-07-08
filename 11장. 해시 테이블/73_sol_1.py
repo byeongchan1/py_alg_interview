@@ -16,7 +16,7 @@ class Solution:
         # 문자 바이트만큼 10으로 시작 판별
         def check(size):
             for i in range(start +1, start + size + 1):
-                if i >= len(data) or (data[i]) >> 6) != 0b10:
+                if i >= len(data) or (data[i] >> 6) != 0b10:
                     return False
             return True
 
